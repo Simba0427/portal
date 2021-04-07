@@ -1,0 +1,107 @@
+/* --- login --- */
+.login-logo-image {
+    width: 90%;
+}
+
+.page-loader {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    z-index: 100;
+}
+
+.badge-pill {
+    border-radius: 3px !important;
+}
+.badge-success-green {
+    background-color: #1caa76 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+.badge-success-light-green {
+    background-color: #3ebeaf;
+    text-transform: uppercase;
+}
+.badge-success-primary {
+    background-color: #2e3ed0;
+    text-transform: uppercase;
+}
+.badge-warning-grey {
+    background-color: #8c8caa;
+    text-transform: uppercase;
+}
+.badge-success-former {
+    background-color: #f69484;
+    text-transform: uppercase;
+}
+
+/* --- sidebar --- */
+.navbar-brand {
+    margin-top: 0.8rem !important;
+}
+.brand-logo-image {
+    width: 180px;
+}
+.navigation-header-location {
+    margin-bottom: 15px;
+    padding: 15px 18px !important;
+    background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+}
+
+.navigation-header-location span {
+    color: #fff;
+}
+
+.sidebar-header-select-location {
+    margin-top: 10px;
+}
+
+/* Membership page -> table -> membership column */
+.multi-line-column {
+    font-size: 10px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+.member-icon {
+    font-size: 12px;
+    color: #bdbcbc;
+}
+.member-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+}
+.member-email-icon {
+    cursor: pointer;
+}
+.member-email-icon:hover {
+    color: #333030;
+}
+
+.membership-discount-price:hover {
+    color: blue;
+    cursor: pointer;
+}
+.table-select {
+    margin-top: 3px !important;
+    margin-left: -20px !important;
+}
+.table-image-icon {
+    height: 40px;
+    line-height: 40px;
+    display: table-cell;
+    color: #bebebe;
+    vertical-align: middle;
+    font-size: 30px;
+    padding: 0 7px;
+}
+
+/* report page */
+.state-report {
+    border-radius: 3px !important;
+    font-size: 11px !important;
+    margin-left: 10px !important;
+}
+.multi-line-state {
+    margin-bottom: 1px;
+}
