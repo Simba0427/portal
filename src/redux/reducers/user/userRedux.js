@@ -6,8 +6,8 @@ const SET_FETCH_STATE = 'User/SET_FETCH_STATE';
 export const onGetUsersByFilter = filterData => {
     return async dispatch => {
         UserService.getAll(filterData).then(response => {
-            dispatch({ type: FETCH_USER, userData: response.data })
-            dispatch({ type: SET_FETCH_STATE, isFetchData: true })
+            dispatch({ type: FETCH_USER, userData: response.data });
+            dispatch({ type: SET_FETCH_STATE, isFetchData: true });
         })
         .catch(error => {
             if (error.response) {

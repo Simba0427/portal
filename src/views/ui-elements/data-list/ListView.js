@@ -370,7 +370,7 @@ class ListView extends React.Component {
                   </div>
                   <div className="filter-actions d-flex">
                     <div className="dropdown actions-dropdown">
-                      { isAddButton ? <Button.Ripple color="primary" onClick={this.handleOpenAddModal}>Add {menu}</Button.Ripple> : null }
+                      { (isAddButton && (user_role === "admin")) ? <Button.Ripple color="primary" onClick={this.handleOpenAddModal}>Add {menu}</Button.Ripple> : null }
                     </div>
                     <UserModal openModal={openMemberModal} onCloseModal={this.handleCloseModal} openModalType={openModalType} selectedRow={selectedRow}/>
                     <ReportModal openModal={openReportModal} onCloseModal={this.handleCloseModal} openModalType={openModalType} selectedRow={selectedRow}/>
@@ -379,7 +379,7 @@ class ListView extends React.Component {
                 {this.state.rowData !== null ? (
                   <ContextLayout.Consumer>
                     {context => (
-                     
+                    
                       <AgGridReact
                         gridOptions={{}}
                         rowSelection="multiple"
@@ -397,7 +397,6 @@ class ListView extends React.Component {
                         enableRtl={context.state.direction === "rtl"}
                       />
                     
-                      
                     )}
                   </ContextLayout.Consumer>
                 ) : null}

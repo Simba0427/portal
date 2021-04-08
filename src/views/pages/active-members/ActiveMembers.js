@@ -199,6 +199,7 @@ export default function ActiveMembersComponent(props) {
                         breadCrumbTitle="Active Members"
                         breadCrumbParent="Pages"
                         breadCrumbActive="Active Members"
+                        hideDetail = {true}
                     />
                     <ListView 
                         rowData={resMemberData}

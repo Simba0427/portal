@@ -17,7 +17,7 @@ export default function ReportsComponent(props) {
 
     const columnDefs = [
         {
-            headerName: "Type",
+            headerName: "Name",
             field: "type",
             filter: true,
             width: 450,

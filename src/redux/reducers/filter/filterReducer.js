@@ -113,7 +113,9 @@ export const onGetMemberByFilter = filterData => {
         MemberService.getAll(filterData).then(response => {
             let rowData
             if (response.data.status === 200) {
-                rowData = response.data.result;
+                let rowData_tmp = response.data.result;
+                rowData = rowData_tmp.filter(data => data["membership"] !== null && data["status"] === "active");
+                console.log(rowData);
             } else if (response.data.status === 401) {
                 dispatch(logoutWithJWT());
             } else {

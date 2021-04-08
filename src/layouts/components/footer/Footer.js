@@ -21,14 +21,14 @@ const Footer = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pixinvent,
+            Localworks HQ Inc.,
           </a>
           All rights reserved
         </span>
-        <span className="float-md-right d-none d-md-block">
+        {/* <span className="float-md-right d-none d-md-block">
           <span className="align-middle">Hand-crafted & Made with</span>{" "}
           <Heart className="text-danger" size={15} />
-        </span>
+        </span> */}
       </p>
       {props.hideScrollToTop === false ? (
         <ScrollToTop showUnder={160}>

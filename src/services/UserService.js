@@ -45,7 +45,16 @@ class UsersDataService {
       }, 
     })
   }
-
+  //recoverPassword coded by Simba.\\2021-04-07-22-06.PC
+  recoverPassword(data) {
+    return http.post(`/users/recover-password`, data, {
+      headers: {
+        Authorization: "Bearer " + userToken,
+        author_exception : true
+      }, 
+    })
+  }
+  //
   delete(id) {
     return http.post(`/users/delete`, id, {
         headers: {
@@ -63,7 +72,6 @@ class UsersDataService {
       },
     });
   }
-
 }
 
 export default new UsersDataService();

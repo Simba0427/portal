@@ -23,35 +23,39 @@ class BreadCrumbs extends React.Component {
               ) : (
                 ""
               )}
-              <div className="breadcrumb-wrapper vx-breadcrumbs d-sm-block d-none col-12">
-                <Breadcrumb tag="ol">
-                  <BreadcrumbItem tag="li">
-                    <NavLink to="/">
-                      <Home className="align-top" size={15} />
-                    </NavLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbItem tag="li" className="text-primary">
-                    {this.props.breadCrumbParent}
-                  </BreadcrumbItem>
-                  {this.props.breadCrumbParent2 ? (
-                    <BreadcrumbItem tag="li" className="text-primary">
-                      {this.props.breadCrumbParent2}
+              {!this.props.hideDetail ? (
+                <div className="breadcrumb-wrapper vx-breadcrumbs d-sm-block d-none col-12">
+                  <Breadcrumb tag="ol">
+                    <BreadcrumbItem tag="li">
+                      <NavLink to="/">
+                        <Home className="align-top" size={15} />
+                      </NavLink>
                     </BreadcrumbItem>
-                  ) : (
-                    ""
-                  )}
-                  {this.props.breadCrumbParent3 ? (
                     <BreadcrumbItem tag="li" className="text-primary">
-                      {this.props.breadCrumbParent3}
+                      {this.props.breadCrumbParent}
                     </BreadcrumbItem>
-                  ) : (
-                    ""
-                  )}
-                  <BreadcrumbItem tag="li" active>
-                    {this.props.breadCrumbActive}
-                  </BreadcrumbItem>
-                </Breadcrumb>
-              </div>
+                    {this.props.breadCrumbParent2 ? (
+                      <BreadcrumbItem tag="li" className="text-primary">
+                        {this.props.breadCrumbParent2}
+                      </BreadcrumbItem>
+                    ) : (
+                      ""
+                    )}
+                    {this.props.breadCrumbParent3 ? (
+                      <BreadcrumbItem tag="li" className="text-primary">
+                        {this.props.breadCrumbParent3}
+                      </BreadcrumbItem>
+                    ) : (
+                      ""
+                    )}
+                    <BreadcrumbItem tag="li" active>
+                      {this.props.breadCrumbActive}
+                    </BreadcrumbItem>
+                  </Breadcrumb>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>

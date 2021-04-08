@@ -16,7 +16,39 @@ import fgImg from "../../../assets/img/logo/logo-main.png"
 import { history } from "../../../history"
 import "../../../assets/scss/pages/authentication.scss"
 
+import SweetAlert from "sweetalert2";
+
+import UserService from "../../../services/UserService";
+
 class ForgotPassword extends React.Component {
+
+  handleChangePassword = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+
+    const param = {
+      email: formData.get('email'),
+      newPwd: "12345678",
+    }
+
+    UserService.recoverPassword(param).then(response => {
+      if (response.data.state) {
+        SweetAlert.fire("Updated", "Success");
+      } else {
+        SweetAlert.fire("Error", "Incorrect your old password","error");
+      }
+    })
+    .catch(error => {
+        if (error.response) {
+            console.log("ERROR ", error.response.data);
+        } else if (error.request) {
+            console.log("ERROR ", error.request);
+        } else {
+            console.log("Bad Request");
+        }
+    });
+  }
+
   render() {
     return (
       <Row className="m-0 justify-content-center">
@@ -47,9 +79,9 @@ class ForgotPassword extends React.Component {
                     instructions on how to reset your password.
                   </p>
                   <CardBody className="pt-1 pb-0">
-                    <Form>
+                    <Form onSubmit={this.handleChangePassword}>
                       <FormGroup className="form-label-group">
-                        <Input type="text" placeholder="Email" required />
+                        <Input type="text" placeholder="Email" id = "email" name = "email" required />
                         <Label>Email</Label>
                       </FormGroup>
                       <div className="float-md-left d-block mb-1">
@@ -57,7 +89,7 @@ class ForgotPassword extends React.Component {
                           color="primary"
                           outline
                           className="px-75 btn-block"
-                          onClick={() => history.push("/")}
+                          onClick={() => history.push("/login")}
                         >
                           Back to Login
                         </Button.Ripple>
@@ -67,10 +99,10 @@ class ForgotPassword extends React.Component {
                           color="primary"
                           type="submit"
                           className="px-75 btn-block"
-                          onClick={e => {
-                            e.preventDefault()
-                            history.push("/login")
-                          }}
+                          // onClick={e => {
+                          //   e.preventDefault()
+                          //   history.push("/login")
+                          // }}
                         >
                           Recover Password
                         </Button.Ripple>
